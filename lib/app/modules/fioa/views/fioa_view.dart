@@ -12,18 +12,18 @@ class FIOA extends StatefulWidget {
 }
 
 class _FIOAState extends State<FIOA> {
+  final _middleNameController = TextEditingController();
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
-  final _middleNameController = TextEditingController();
   final _ageController = TextEditingController();
 
   final DataService _dataService = DataService();
 
   Future<void> _saveDataToJson() async {
     final userData = UserData(
+      middleName: _middleNameController.text,
       firstName: _firstNameController.text,
       lastName: _lastNameController.text,
-      middleName: _middleNameController.text,
       age: int.parse(_ageController.text),
     );
 
@@ -87,9 +87,9 @@ class _FIOAState extends State<FIOA> {
         title: Text('Сохранить в JSON'),
       ),
       body: DataForm(
+        middleNameController: _middleNameController,
         firstNameController: _firstNameController,
         lastNameController: _lastNameController,
-        middleNameController: _middleNameController,
         ageController: _ageController,
         onSave: _saveDataToJson,
         onViewData: _viewData,

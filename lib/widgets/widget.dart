@@ -5,18 +5,18 @@
 import 'package:flutter/material.dart';
 
 class DataForm extends StatefulWidget {
+  final TextEditingController middleNameController;
   final TextEditingController firstNameController;
   final TextEditingController lastNameController;
-  final TextEditingController middleNameController;
   final TextEditingController ageController;
   final VoidCallback onSave;
   final VoidCallback onViewData;
 
   const DataForm({
     Key? key,
+    required this.middleNameController,
     required this.firstNameController,
     required this.lastNameController,
-    required this.middleNameController,
     required this.ageController,
     required this.onSave,
     required this.onViewData,
@@ -46,6 +46,11 @@ class _DataFormState extends State<DataForm> {
         child: Column(
           children: [
             TextFormField(
+              controller: widget.lastNameController,
+              decoration: InputDecoration(labelText: 'Фамилия'),
+            ),
+            SizedBox(height: 10),
+            TextFormField(
               controller: widget.firstNameController,
               decoration: InputDecoration(labelText: 'Имя'),
             ),
@@ -53,11 +58,6 @@ class _DataFormState extends State<DataForm> {
             TextFormField(
               controller: widget.middleNameController,
               decoration: InputDecoration(labelText: 'Отчество'),
-            ),
-            SizedBox(height: 10),
-            TextFormField(
-              controller: widget.lastNameController,
-              decoration: InputDecoration(labelText: 'Фамилия'),
             ),
             SizedBox(height: 10),
             TextFormField(
