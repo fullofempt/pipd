@@ -1,13 +1,15 @@
 import 'package:get/get.dart';
-import 'package:pipd/app/modules/historyJson/views/history_json_view.dart';
 
 import '../modules/fioa/bindings/fioa_binding.dart';
 import '../modules/fioa/views/fioa_view.dart';
 import '../modules/historyJson/bindings/history_json_binding.dart';
+import '../modules/historyJson/views/history_json_view.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/task/bindings/task_binding.dart';
+import '../modules/task/views/task_view.dart';
 
 part 'app_routes.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.HISTORY_JSON,
       page: () => const HistoryJson(),
       binding: HistoryJsonBinding(),
+    ),
+    GetPage(
+      name: _Paths.TASK,
+      page: () => TaskView(),
+      binding: TaskBinding(),
     ),
   ];
 }

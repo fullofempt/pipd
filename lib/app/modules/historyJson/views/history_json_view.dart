@@ -20,11 +20,17 @@ class _HistoryJsonState extends State<HistoryJson> {
     _loadData();
   }
 
+  Future<void> _deleteUserData(int index) async {
+    await _dataService.deleteUserData(index);
+    _loadData();
+  }
+
   Future<void> _loadData() async {
     String? jsonData = await _dataService.readUserData();
     if (jsonData != null) {
       List<dynamic> jsonList = jsonDecode(jsonData) as List<dynamic>;
-      List<UserData> dataList = jsonList.map((json) => UserData.fromJson(json)).toList();
+      List<UserData> dataList =
+          jsonList.map((json) => UserData.fromJson(json)).toList();
       setState(() {
         _userDataList = dataList;
       });
@@ -62,8 +68,13 @@ class _HistoryJsonState extends State<HistoryJson> {
           return Card(
             margin: EdgeInsets.all(8.0),
             child: ListTile(
-              title: Text('${userData.lastName} ${userData.firstName} ${userData.middleName}'),
+              title: Text(
+                  '${userData.lastName} ${userData.firstName} ${userData.middleName}'),
               subtitle: Text('Возраст: ${userData.age}'),
+              trailing: IconButton(
+                icon: Icon(Icons.delete),
+                onPressed: () => _deleteUserData(index),
+              ),
             ),
           );
         },

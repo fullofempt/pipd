@@ -29,3 +29,35 @@ class UserData {
     };
   }
 }
+class TaskData {
+  final int id;
+  final String taskName;
+  final String taskImage;
+  int answer;
+
+  TaskData({
+    required this.id,
+    required this.taskName,
+    required this.taskImage,
+    required this.answer,
+  });
+
+  factory TaskData.fromJson(Map<String, dynamic> json) {
+    return TaskData(
+      id: json['id'],
+      taskName: json['taskName'],
+      taskImage: json['taskImage'],
+      answer: json['answer'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'taskName': taskName,
+      'taskImage': taskImage,
+      'answer': answer,
+    };
+  }
+}
+

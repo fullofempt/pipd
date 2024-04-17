@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pipd/app/data/data.dart';
 import 'package:pipd/app/modules/historyJson/views/history_json_view.dart';
+import 'package:pipd/app/modules/task/views/task_view.dart';
 import 'package:pipd/app/services/services.dart';
 import 'package:pipd/widgets/widget.dart';
+import 'package:get/get.dart';
 
 class FIOA extends StatefulWidget {
   const FIOA({Key? key}) : super(key: key);
@@ -28,6 +30,7 @@ class _FIOAState extends State<FIOA> {
     );
 
     await _dataService.saveUserData(userData);
+    Get.to(() => TaskView());
   }
 
   Future<void> _viewData() async {
@@ -93,10 +96,6 @@ class _FIOAState extends State<FIOA> {
         ageController: _ageController,
         onSave: _saveDataToJson,
         onViewData: _viewData,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _navigateToHistoryJson, // обновленный вызов метода
-        child: Icon(Icons.list),
       ),
     );
   }

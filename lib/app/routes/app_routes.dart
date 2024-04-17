@@ -7,6 +7,7 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const FIOA = _Paths.FIOA;
   static const HISTORY_JSON = _Paths.HISTORY_JSON;
+  static const TASK = _Paths.TASK;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const FIOA = '/fioa';
   static const HISTORY_JSON = '/history-json';
+  static const TASK = '/task';
 }

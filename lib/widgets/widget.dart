@@ -69,13 +69,13 @@ class _DataFormState extends State<DataForm> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: widget.onSave,
-              child: Text('Сохранить в JSON'),
+              child: Text('Сохранить Ученика'),
             ),
             SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: widget.onViewData,
-              child: Text('Просмотреть JSON данные'),
-            ),
+            // ElevatedButton(
+            //   onPressed: widget.onViewData,
+            //   child: Text('Просмотреть JSON данные'),
+            // ),
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pipd/app/modules/fioa/views/fioa_view.dart';
 import 'package:pipd/app/modules/historyJson/views/history_json_view.dart';
+import 'package:pipd/app/routes/app_pages.dart';
 import '../controllers/main_controller.dart';
 
 class MainView extends GetView<MainController> {
@@ -42,6 +43,12 @@ class MainView extends GetView<MainController> {
                 );
               },
               child: Text('История тестирования'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(Routes.TASK);
+              },
+              child: Text('Проверка заданий, как работают'),
             ),
           ],
         ),
