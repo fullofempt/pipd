@@ -45,6 +45,7 @@ class _DataFormState extends State<DataForm> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            SizedBox(height: 10),
             TextFormField(
               controller: widget.lastNameController,
               decoration: InputDecoration(labelText: 'Фамилия'),
